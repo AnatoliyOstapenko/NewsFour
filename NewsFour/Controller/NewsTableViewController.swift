@@ -10,7 +10,7 @@ import UIKit
 class NewsTableViewController: UITableViewController {
     
     var array = [Articles]()
-    //var newsManager = NewsManager.init(text: "world")
+    var newsManager = NewsManager.init(text: "world")
     
     @IBOutlet weak var newsSearchBar: UISearchBar!
     
@@ -23,6 +23,20 @@ class NewsTableViewController: UITableViewController {
         // registration nib
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
+        updateUI()
+    }
+    func updateUI() {
+        newsManager.getData { [weak self] result in
+            switch result {
+            case .success(let news):
+                self?.array = news.articles
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -68,7 +82,7 @@ extension NewsTableViewController: UISearchBarDelegate {
         guard let text = searchBar.text else { return }
         
         // add text to initialString in NewsManager
-        let newsManager = NewsManager.init(text: text)
+        self.newsManager = NewsManager.init(text: text)
         
         newsManager.getData { [weak self] result in
             switch result {
