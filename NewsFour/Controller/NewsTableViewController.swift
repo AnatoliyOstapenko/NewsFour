@@ -7,10 +7,14 @@
 
 import UIKit
 
+
 class NewsTableViewController: UITableViewController {
     
     var array = [Articles]()
     var newsManager = NewsManager.init(text: "world")
+    var webString: String?
+    
+   
     
     @IBOutlet weak var newsSearchBar: UISearchBar!
     
@@ -20,11 +24,13 @@ class NewsTableViewController: UITableViewController {
 
         newsSearchBar.delegate = self
         
+        
         // registration nib
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         updateUI()
     }
+    
     func updateUI() {
         newsManager.getData { [weak self] result in
             switch result {
@@ -53,8 +59,6 @@ class NewsTableViewController: UITableViewController {
         // get row from tableview
         let item = array[indexPath.row]
         
-        print("Punlisher is \(item.source.publisher)")
-        
         //dispatch data to cell
         cell.publisher.text = item.source.publisher
         cell.newsDescription.text = item.description
@@ -73,6 +77,31 @@ class NewsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = array[indexPath.row]
+        webString = item.url
+        
+        self.performSegue(withIdentifier: "goToNewsWKWebView", sender: self)
+    }
+    // MARK: - Prepare Segue
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        
+        if segue.identifier == "goToNewsWKWebView" {
+            
+            let destination = segue.destination as! NewsWKWebViewController
+            
+            guard let urlString = webString else { return }
+            destination.load(urlString)
+            
+            
+        }
+  
+    }
+    
 }
 
 // MARK: - UISearchBarDelegate
@@ -84,19 +113,7 @@ extension NewsTableViewController: UISearchBarDelegate {
         // add text to initialString in NewsManager
         self.newsManager = NewsManager.init(text: text)
         
-        newsManager.getData { [weak self] result in
-            switch result {
-            case .success(let news):
-                self?.array = news.articles
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
+        updateUI()
         
     }
     

@@ -6,13 +6,32 @@
 //
 
 import UIKit
+import WebKit
 
 class NewsWKWebViewController: UIViewController {
+    
+    var webView = WKWebView()
+    var urlString = ""
+   
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view = webView
+  
     }
+    
+    func load(_ urlString: String) {
+        if let url = URL(string: urlString) {
+            let request = URLRequest(url: url)
+            DispatchQueue.main.async {
+                self.webView.load(request)
+            }
+            
+        }
+    }
+ 
 
 
 }
