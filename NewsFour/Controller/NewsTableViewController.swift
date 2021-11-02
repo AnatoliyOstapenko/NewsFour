@@ -44,7 +44,18 @@ class NewsTableViewController: UITableViewController {
         //dispatch data to cell
         cell.publisher.text = item.source.publisher
         cell.newsDescription.text = item.description
-        //cell.publishedAt.text = item.publishedAt
+        cell.publishedAt.text = item.publishedAt
+        
+        // Convert string to UIImage anf dispatch to cell
+        if let url = URL(string: item.urlToImage) {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard error == nil, let data = data else { return }
+                
+                DispatchQueue.main.async {
+                    cell.newsImage.image = UIImage(data: data)
+                }
+            }.resume() // it's mandatory
+        }
 
         return cell
     }

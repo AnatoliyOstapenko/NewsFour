@@ -12,7 +12,7 @@
         <scene sceneID="NYp-hF-ftI">
             <objects>
                 <tableViewController id="rVQ-4l-uz8" customClass="NewsTableViewController" customModule="NewsFour" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="440" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Aa-e4-IfY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="360" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Aa-e4-IfY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
