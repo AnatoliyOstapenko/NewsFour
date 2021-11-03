@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FACF086127331366005BE3E9 /* SavedNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF086027331366005BE3E9 /* SavedNewsTableViewController.swift */; };
 		FAD33710273076340010582F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3370F273076340010582F /* AppDelegate.swift */; };
 		FAD33712273076340010582F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD33711273076340010582F /* SceneDelegate.swift */; };
 		FAD33714273076340010582F /* NewsWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD33713273076340010582F /* NewsWKWebViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FACF086027331366005BE3E9 /* SavedNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsTableViewController.swift; sourceTree = "<group>"; };
 		FAD3370C273076330010582F /* NewsFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD3370F273076340010582F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD33711273076340010582F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				FAD33728273077BC0010582F /* NewsTableViewController.swift */,
 				FAD33733273095590010582F /* NewsTableViewCell.swift */,
 				FAD33713273076340010582F /* NewsWKWebViewController.swift */,
+				FACF086027331366005BE3E9 /* SavedNewsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				FAD33729273077BC0010582F /* NewsTableViewController.swift in Sources */,
 				FAD33731273094B70010582F /* NewsManager.swift in Sources */,
 				FAD33712273076340010582F /* SceneDelegate.swift in Sources */,
+				FACF086127331366005BE3E9 /* SavedNewsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

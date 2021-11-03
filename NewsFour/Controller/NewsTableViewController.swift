@@ -64,6 +64,9 @@ class NewsTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewsTableViewCell
+        
+        // delegate TableViewController to cell
+        cell.tableViewController = self
 
         // get row from tableview
         let item = array[indexPath.row]

@@ -26,7 +26,16 @@
                             <outlet property="delegate" destination="rVQ-4l-uz8" id="Ry0-L5-WFT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="NEWS" id="S4u-UX-plG"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="NEWS" id="S4u-UX-plG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="BMq-D2-8rv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="UYS-MX-d99" kind="show" id="up0-rU-5xt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1vU-FW-sNa">
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle"/>
@@ -37,11 +46,41 @@
                     <connections>
                         <outlet property="newsSearchBar" destination="Mxo-fi-7LW" id="WOs-7M-vau"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNewsWKWebView" id="kzU-rb-ups"/>
+                        <segue destination="UYS-MX-d99" kind="presentation" identifier="goToSavedNewsTVC" id="F3x-kO-LwR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHe-NJ-PZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="160.86956521739131" y="99.776785714285708"/>
+        </scene>
+        <!--Saved News Table View Controller-->
+        <scene sceneID="N6F-jx-9SX">
+            <objects>
+                <tableViewController id="UYS-MX-d99" customClass="SavedNewsTableViewController" customModule="NewsFour" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XaH-Dp-YyI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTwo" id="p2j-gg-Lpm">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p2j-gg-Lpm" id="Iy0-ny-Auh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UYS-MX-d99" id="pUo-5L-bm7"/>
+                            <outlet property="delegate" destination="UYS-MX-d99" id="j6J-dV-naG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4lk-eR-8sr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UU7-Lh-Zi9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="498"/>
         </scene>
         <!--NewsWK Web View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -56,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863.768115942029" y="99.776785714285708"/>
+            <point key="canvasLocation" x="996" y="-188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tff-X7-xsh">
@@ -66,6 +105,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0UP-j6-0vV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -77,6 +121,9 @@
             <point key="canvasLocation" x="-543" y="100"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="F3x-kO-LwR"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
