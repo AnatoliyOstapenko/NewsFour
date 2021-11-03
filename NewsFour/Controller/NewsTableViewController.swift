@@ -14,7 +14,6 @@ class NewsTableViewController: UITableViewController {
     var newsManager = NewsManager.init(text: "world")
     var webString: String?
     
-   
     
     @IBOutlet weak var newsSearchBar: UISearchBar!
     
@@ -31,6 +30,15 @@ class NewsTableViewController: UITableViewController {
         updateUI()
     }
     
+    // UIRefreshControl
+    @IBAction func refreshUI(_ sender: UIRefreshControl) {
+        updateUI()
+        sender.endRefreshing()
+    }
+    
+    
+    
+    
     func updateUI() {
         newsManager.getData { [weak self] result in
             switch result {
@@ -44,6 +52,7 @@ class NewsTableViewController: UITableViewController {
             }
         }
     }
+
 
     // MARK: - Table view data source
 
@@ -112,7 +121,6 @@ extension NewsTableViewController: UISearchBarDelegate {
         
         // add text to initialString in NewsManager
         self.newsManager = NewsManager.init(text: text)
-        
         updateUI()
         
     }

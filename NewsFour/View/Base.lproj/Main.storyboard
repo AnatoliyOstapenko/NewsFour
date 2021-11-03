@@ -27,6 +27,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="NEWS" id="S4u-UX-plG"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1vU-FW-sNa">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                        <connections>
+                            <action selector="refreshUI:" destination="rVQ-4l-uz8" eventType="valueChanged" id="jS6-Tk-FmM"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="newsSearchBar" destination="Mxo-fi-7LW" id="WOs-7M-vau"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNewsWKWebView" id="kzU-rb-ups"/>

@@ -23,14 +23,10 @@ class NewsWKWebViewController: UIViewController {
     }
     
     func load(_ urlString: String) {
-        if let url = URL(string: urlString) {
-            let request = URLRequest(url: url)
-            DispatchQueue.main.async {
-                self.webView.load(request)
+        
+        guard let url = URL(string: urlString) else { return }
+        webView.load(URLRequest(url: url))
             }
-            
-        }
-    }
  
 
 
