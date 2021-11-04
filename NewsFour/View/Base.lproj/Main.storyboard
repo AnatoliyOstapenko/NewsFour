@@ -37,6 +37,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1vU-FW-sNa">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle"/>
                         <connections>
@@ -46,7 +47,6 @@
                     <connections>
                         <outlet property="newsSearchBar" destination="Mxo-fi-7LW" id="WOs-7M-vau"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNewsWKWebView" id="kzU-rb-ups"/>
-                        <segue destination="UYS-MX-d99" kind="presentation" identifier="goToSavedNewsTVC" id="F3x-kO-LwR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHe-NJ-PZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,29 +58,23 @@
             <objects>
                 <tableViewController id="UYS-MX-d99" customClass="SavedNewsTableViewController" customModule="NewsFour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XaH-Dp-YyI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTwo" id="p2j-gg-Lpm">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p2j-gg-Lpm" id="Iy0-ny-Auh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="UYS-MX-d99" id="pUo-5L-bm7"/>
                             <outlet property="delegate" destination="UYS-MX-d99" id="j6J-dV-naG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4lk-eR-8sr"/>
+                    <navigationItem key="navigationItem" id="4lk-eR-8sr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="MpS-k1-nn8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UU7-Lh-Zi9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="498"/>
+            <point key="canvasLocation" x="161" y="818"/>
         </scene>
         <!--NewsWK Web View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -95,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-188"/>
+            <point key="canvasLocation" x="987" y="544"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tff-X7-xsh">
@@ -121,9 +115,6 @@
             <point key="canvasLocation" x="-543" y="100"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="F3x-kO-LwR"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

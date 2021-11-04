@@ -37,7 +37,7 @@ class SavedNewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewsTableViewCell
 
         let item = array[indexPath.row]
-        
+        // dispatch data from Core Data to Cell
         cell.newsDescription.text = item.newsDescription
         cell.publisher.text = item.publisher
         cell.publishedAt.text = item.publishedAt
