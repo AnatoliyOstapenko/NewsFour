@@ -10,6 +10,9 @@ import CoreData
 
 class NewsTableViewCell: UITableViewCell {
     
+    var coreDataList = [NewsCoreData]()
+    
+    var newsTableViewController = NewsTableViewController()
     
     // create UIViewController class to use present in button
     var tableViewController: UIViewController?
@@ -30,16 +33,17 @@ class NewsTableViewCell: UITableViewCell {
         // add buttons
         let addButton = UIAlertAction(title: "add", style: .default) { (action) in
             
-//            guard let text = self.textField.text else { return }
+            let item = NewsCoreData(context: self.context)
             
-//            let item = ItemCoreData(context: self.context)
+            // Dispatch data from labels and wedString to Core Data
+            item.newsDescription = self.newsDescription.text
+            //item.newsImage = self.newsImage.image
+            item.publishedAt = self.publishedAt.text
+            item.publisher = self.publisher.text
+            item.url = self.newsTableViewController.webString
             
-//            item.city = text
-//            item.time = Date()
-//
-//            self.array.append(item)
-//
-//            self.saveData()
+            self.coreDataList.append(item)
+            self.saveData()
         }
         
         let cancelButton = UIAlertAction(title: "cancel", style: .destructive, handler: nil)
@@ -51,4 +55,14 @@ class NewsTableViewCell: UITableViewCell {
         tableViewController?.present(alert, animated: true, completion: nil)
         
     }
+    
+    // MARK: - Core Data
+    
+    func saveData() {
+        do {
+            try context.save()
+        } catch { print("saving error \(error)")}
+        
+    }
+    
 }

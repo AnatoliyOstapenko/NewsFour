@@ -65,7 +65,7 @@ class NewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewsTableViewCell
         
-        // delegate TableViewController to cell
+        // delegate TableViewController to cell. It's needed to use "present" in button in TVCell
         cell.tableViewController = self
 
         // get row from tableview
@@ -94,6 +94,7 @@ class NewsTableViewController: UITableViewController {
         let item = array[indexPath.row]
         webString = item.url
         
+                
         self.performSegue(withIdentifier: "goToNewsWKWebView", sender: self)
     }
     

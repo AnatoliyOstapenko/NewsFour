@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA5608892734638C008B2A11 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5608882734638C008B2A11 /* NewsData.swift */; };
 		FACF086127331366005BE3E9 /* SavedNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF086027331366005BE3E9 /* SavedNewsTableViewController.swift */; };
 		FAD33710273076340010582F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3370F273076340010582F /* AppDelegate.swift */; };
 		FAD33712273076340010582F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD33711273076340010582F /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA5608882734638C008B2A11 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		FACF086027331366005BE3E9 /* SavedNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsTableViewController.swift; sourceTree = "<group>"; };
 		FAD3370C273076330010582F /* NewsFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD3370F273076340010582F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		FAD3373C2731BC660010582F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA5608882734638C008B2A11 /* NewsData.swift */,
 				FAD33730273094B70010582F /* NewsManager.swift */,
 				FAD3372C27307C6E0010582F /* NewsDataModel.swift */,
 			);
@@ -187,6 +190,7 @@
 				FAD33710273076340010582F /* AppDelegate.swift in Sources */,
 				FAD33735273095590010582F /* NewsTableViewCell.swift in Sources */,
 				FAD3372D27307C6E0010582F /* NewsDataModel.swift in Sources */,
+				FA5608892734638C008B2A11 /* NewsData.swift in Sources */,
 				FAD3371A273076340010582F /* NewsFour.xcdatamodeld in Sources */,
 				FAD33729273077BC0010582F /* NewsTableViewController.swift in Sources */,
 				FAD33731273094B70010582F /* NewsManager.swift in Sources */,
