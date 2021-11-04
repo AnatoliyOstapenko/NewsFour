@@ -96,9 +96,8 @@ class NewsTableViewController: UITableViewController {
         
         self.performSegue(withIdentifier: "goToNewsWKWebView", sender: self)
     }
+    
     // MARK: - Prepare Segue
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         

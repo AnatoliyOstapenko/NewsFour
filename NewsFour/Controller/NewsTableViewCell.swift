@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewsTableViewCell: UITableViewCell {
     
@@ -19,12 +20,12 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var publishedAt: UILabel!
     
     
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     @IBAction func saveNews(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "ADD NEWS TO LIST", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "add news you like", message: "", preferredStyle: .alert)
         
         // add buttons
         let addButton = UIAlertAction(title: "add", style: .default) { (action) in
