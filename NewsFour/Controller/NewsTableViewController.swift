@@ -96,7 +96,6 @@ class NewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = array[indexPath.row]
         webString = item.url
-        
                 
         self.performSegue(withIdentifier: "goToNewsWKWebView", sender: self)
     }

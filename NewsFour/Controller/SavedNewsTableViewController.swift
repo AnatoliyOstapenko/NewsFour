@@ -53,17 +53,37 @@ class SavedNewsTableViewController: UITableViewController {
                     }
                     
                 }.resume()
-            
-            
             }
-            
         }
-        
-            
-        
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = array[indexPath.row]
+        
+        print("did select row \(item)")
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let deleteButton = UIAlertAction(title: "delete", style: .destructive) { (alert) in
+            self.deleteData(item)
+        }
+        let goToWeb = UIAlertAction(title: "read news", style: .default) { (alert) in
+            print("go to the NewsWKWebVC")
+        }
+        let cancelButton = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(deleteButton)
+        alert.addAction(goToWeb)
+        alert.addAction(cancelButton)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    //MARK: - Core Data Method
     
     func loadData() {
         do {
