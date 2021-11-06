@@ -2,11 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1519" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="NewsCoreData" representedClassName="NewsCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="newsDescription" optional="YES" attributeType="String"/>
+        <attribute name="newsImage" optional="YES" attributeType="String"/>
         <attribute name="publishedAt" optional="YES" attributeType="String"/>
         <attribute name="publisher" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="NewsCoreData" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="NewsCoreData" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

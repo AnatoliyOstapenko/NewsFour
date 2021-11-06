@@ -76,6 +76,9 @@ class NewsTableViewController: UITableViewController {
         cell.newsDescription.text = item.description
         cell.publishedAt.text = item.publishedAt
         
+        // transfer string data to cell
+        cell.newsText = item.urlToImage
+        
         // Convert string to UIImage anf dispatch to cell
         if let url = URL(string: item.urlToImage) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in

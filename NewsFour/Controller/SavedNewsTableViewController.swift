@@ -42,6 +42,26 @@ class SavedNewsTableViewController: UITableViewController {
         cell.publisher.text = item.publisher
         cell.publishedAt.text = item.publishedAt
         
+        //convert String to UIImage data
+        if let urlString = item.newsImage {
+            if let url = URL(string: urlString) {
+                
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    guard error == nil, let data = data else { return }
+                    DispatchQueue.main.async {
+                        cell.newsImage.image = UIImage(data: data)
+                    }
+                    
+                }.resume()
+            
+            
+            }
+            
+        }
+        
+            
+        
+        
         return cell
     }
     

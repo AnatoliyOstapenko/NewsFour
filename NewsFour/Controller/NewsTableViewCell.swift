@@ -13,6 +13,7 @@ class NewsTableViewCell: UITableViewCell {
     var coreDataList = [NewsCoreData]()
     
     var newsTableViewController = NewsTableViewController()
+    var newsText: String?
     
     // create UIViewController class to use present in button
     var tableViewController: UIViewController?
@@ -37,10 +38,12 @@ class NewsTableViewCell: UITableViewCell {
             
             // Dispatch data from labels and wedString to Core Data
             item.newsDescription = self.newsDescription.text
-            //item.newsImage = self.newsImage.image
             item.publishedAt = self.publishedAt.text
             item.publisher = self.publisher.text
             item.url = self.newsTableViewController.webString
+            item.newsImage = self.newsText
+           
+            
             
             self.coreDataList.append(item)
             self.saveData()
