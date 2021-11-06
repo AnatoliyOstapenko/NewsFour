@@ -61,16 +61,17 @@ class SavedNewsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = array[indexPath.row]
-        
-        print("did select row \(item)")
-        
+
+        // create action when a row clicked
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let deleteButton = UIAlertAction(title: "delete", style: .destructive) { (alert) in
             self.deleteData(item)
         }
         let goToWeb = UIAlertAction(title: "read news", style: .default) { (alert) in
-            print("go to the NewsWKWebVC")
+            
+            // switch to NewsWKWebView
+            self.performSegue(withIdentifier: "goToNewsWKWebView", sender: self)
         }
         let cancelButton = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
         
