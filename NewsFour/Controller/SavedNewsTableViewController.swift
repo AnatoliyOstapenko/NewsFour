@@ -13,6 +13,7 @@ class SavedNewsTableViewController: UITableViewController {
     var array = [NewsCoreData]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var webString: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,10 @@ class SavedNewsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = array[indexPath.row]
-
+        
+        webString = item.url
+        print("webString in second time: \(webString)")
+        
         // create action when a row clicked
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -70,8 +74,10 @@ class SavedNewsTableViewController: UITableViewController {
         }
         let goToWeb = UIAlertAction(title: "read news", style: .default) { (alert) in
             
+            print("clicked gotoweb button")
+            
             // switch to NewsWKWebView
-            self.performSegue(withIdentifier: "goToNewsWKWebView", sender: self)
+            self.performSegue(withIdentifier: "goToSavedNews", sender: self)
         }
         let cancelButton = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
         
@@ -83,6 +89,22 @@ class SavedNewsTableViewController: UITableViewController {
         
     }
     
+    // MARK: - Prepare Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+
+        if segue.identifier == "goToSavedNews" {
+
+            let destination = segue.destination as! SavedWKViewController
+
+            guard let urlString = webString else { return }
+            destination.loadWeb(urlString)
+
+
+        }
+
+    }
+    
     
     //MARK: - Core Data Method
     
@@ -90,7 +112,7 @@ class SavedNewsTableViewController: UITableViewController {
         do {
             array = try context.fetch(NewsCoreData.fetchRequest())
         } catch { print("loading error \(error)")}
-        
+        tableView.reloadData()
         
  
     }

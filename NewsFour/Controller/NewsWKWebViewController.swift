@@ -11,10 +11,7 @@ import WebKit
 class NewsWKWebViewController: UIViewController {
     
     var webView = WKWebView()
-    var urlString = ""
    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

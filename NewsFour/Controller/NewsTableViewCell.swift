@@ -42,8 +42,6 @@ class NewsTableViewCell: UITableViewCell {
             item.publisher = self.publisher.text
             item.url = self.newsTableViewController.webString
             item.newsImage = self.newsText
-           
-            print("image string: \(String(describing: self.newsText))")
             
             self.coreDataList.append(item)
             self.saveData()

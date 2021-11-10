@@ -46,7 +46,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="newsSearchBar" destination="Mxo-fi-7LW" id="WOs-7M-vau"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNewsWKWebView" id="kzU-rb-ups"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNewsWKWebView" modalPresentationStyle="automatic" id="kzU-rb-ups"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHe-NJ-PZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,12 +72,43 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNewsWKWebView" id="naZ-xZ-ZoF"/>
+                        <segue destination="Fy6-89-8mb" kind="presentation" identifier="goToSavedNews" modalPresentationStyle="automatic" id="UTu-XI-xuH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UU7-Lh-Zi9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="161" y="818"/>
+        </scene>
+        <!--SavedWK View Controller-->
+        <scene sceneID="rWW-QY-852">
+            <objects>
+                <viewController id="Fy6-89-8mb" customClass="SavedWKViewController" customModule="NewsFour" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5E0-ez-yOG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCW-Ip-wz7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HjR-cR-HNs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NCW-Ip-wz7" firstAttribute="leading" secondItem="HjR-cR-HNs" secondAttribute="leading" id="EaB-R5-2Lz"/>
+                            <constraint firstItem="HjR-cR-HNs" firstAttribute="bottom" secondItem="NCW-Ip-wz7" secondAttribute="bottom" id="ciI-5x-EEQ"/>
+                            <constraint firstItem="NCW-Ip-wz7" firstAttribute="top" secondItem="HjR-cR-HNs" secondAttribute="top" id="lB9-Bo-0mK"/>
+                            <constraint firstItem="HjR-cR-HNs" firstAttribute="trailing" secondItem="NCW-Ip-wz7" secondAttribute="trailing" id="rBO-Vk-BcN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mp0-Ja-84N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="818"/>
         </scene>
         <!--NewsWK Web View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -92,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="544"/>
+            <point key="canvasLocation" x="925" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tff-X7-xsh">
@@ -118,9 +149,6 @@
             <point key="canvasLocation" x="-543" y="100"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="naZ-xZ-ZoF"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
